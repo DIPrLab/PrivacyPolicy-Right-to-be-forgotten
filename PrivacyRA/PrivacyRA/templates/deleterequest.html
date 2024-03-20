@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right to be Forgotten Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            padding-right: 30px;
+        }
+
+        .delete-card,
+        .delete-payment {
+            display: none;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Right to be Forgotten Request</h1>
+        <form action="/submit_forgotten_request" method="POST" id="forgotten_request_form">
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="delete_type">Select Delete Type:</label>
+            <select id="delete_type" name="delete_type">
+                <option value="card">Delete Card</option>
+                <option value="payment">Delete Payment</option>
+            </select>
+
+            <div class="delete-card">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" placeholder="Enter card number">
+            </div>
+
+            <div class="delete-payment">
+                <label for="transaction_id">Transaction ID:</label>
+                <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter transaction ID">
+            </div>
+
+            <label for="delete_method">Select Delete Method:</label>
+            <select id="delete_method" name="delete_method">
+                <option value="1">I wish to remove the card/payment mentioned earlier.</option>
+                <option value="2">I want to remove all payments linked to the previously mentioned card.</option>
+                <option value="3">I wish to remove both my card information and any associated payments.</option>
+            </select>
+
+            <label for="request_description">Request Description:</label>
+            <textarea id="request_description" name="request_description" required></textarea>
+
+            <div class="checkbox-label">
+                <input type="checkbox" id="confirmation" name="confirmation" required>
+                <label for="confirmation">I confirm that I want my data to be forgotten.</label>
+            </div>
+
+            <div class="checkbox-label">
+                <input type="checkbox" id="verification" name="verification" required>
+                <label for="verification">I verify that the information provided is accurate.</label>
+            </div>
+
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+    </div>
+
+    <script>
+        const deleteTypeSelect = document.getElementById("delete_type");
+        const deleteCardFields = document.querySelector(".delete-card");
+        const deletePaymentFields = document.querySelector(".delete-payment");
+
+        deleteTypeSelect.addEventListener("change", () => {
+            if (deleteTypeSelect.value === "card") {
+                deleteCardFields.style.display = "block";
+                deletePaymentFields.style.display = "none";
+            } else if (deleteTypeSelect.value === "payment") {
+                deleteCardFields.style.display = "none";
+                deletePaymentFields.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>

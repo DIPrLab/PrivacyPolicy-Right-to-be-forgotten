@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: linear-gradient(to bottom, #ffcc00, #ff6600); /* Gradient background */
+            color: #333; /* Dark gray font color */
+        }
+
+        header {
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for header */
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        
+
+        p {
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for footer */
+            position: fixed;
+            bottom: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;            
+            color: #fff;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .nav-links li {
+                margin-right: 20px;
+            }
+
+                .nav-links li a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Welcome to our E-commerce Privacy Policy - Right to be Forgotten</h1>
+            <div class="navbar-toggle">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="/payment">Payments</a></li>
+                <li><a href="/details">Details</a></li>
+                <li><a href="/request">Request Form</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <h2>Project Motivation</h2>
+        <p>
+            Online shopping has become a vital part of our lives in the current digital era, providing accessibility and convenience unlike anything else.
+            But consumers are growing more hesitant to share personal information due to worries about data security and privacy,
+            particularly when it comes to sensitive information like credit card numbers. In light of the necessity for improved privacy compliance
+            in e-commerce platforms, the goal of our project is to create a reliable and safe web application that prioritizes user privacy while managing payments and card information.
+        </p>
+
+        <h2>Introduction</h2>
+        <p>
+            As convenience meets consumer demand in an era of online commerce, protecting user data privacy and security has become a non-negotiable necessity.
+            Our project is a concentrated attempt to address this pressing need by creating privacy compliance that prioritizes user privacy and data protection,
+            such as the Right to be Forgotten in payments and credit card information in web applications.
+        </p>
+
+        <h2>Tools Used</h2>
+        <p>
+            Flask: To construct the application's backend, we opted for Flask, a Python web framework that is both lightweight and adaptable.
+            Flask gives us the tools we need to manage database interactions, routing, and request handling effectively.
+        </p>
+        <p>
+            Python: The main programming language used to create the backend logic for our online application is Python.
+            It is the best option for web development tasks because of its ease of use, readability, and extensive library ecosystem.
+        </p>
+        <p>
+            MySQL: We chose the well-known open-source relational database management system MySQL for data management and storage.
+            We can safely store user card information and carry out effective data retrieval and manipulation tasks thanks to MySQL.
+        </p>
+        <p>
+            HTML, CSS, and JavaScript: We used the traditional web trio for our application's front end:
+            HTML for content organization, CSS for layout styling, and JavaScript for dynamic and interactive features.
+        </p>
+
+
+
+    </section>
+
+    <footer>
+        &copy; 2024 Privacy Policy - Right to be Forgotten     
+    </footer>
+    <script>
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

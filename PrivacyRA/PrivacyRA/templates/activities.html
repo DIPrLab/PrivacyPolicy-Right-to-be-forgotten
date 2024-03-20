@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
+    <style>
+        /* CSS Styles for Activities List */
+        #activities-list {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .activity-item:hover {
+                background-color: #f0f0f0;
+                cursor: pointer;
+            }
+
+            h1{
+                margin-left : 45%;
+            }
+    </style>
+</head>
+<body>
+    <h1>Activities</h1>
+    <div id="activities-list">
+        {% for activity in activities %}
+        <div class="activity-item">{{ activity.message }}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>

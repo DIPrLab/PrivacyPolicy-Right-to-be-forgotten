@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Request Page</title>
+    <style>
+        /* Style for the container */
+        .page-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Style for the dropdown button */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        /* Style for the dropdown button */
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .dropbtn:after {
+                content: '\25BC';
+                font-size: 12px;
+                color: white;
+                margin-left: 5px;
+            }
+    </style>
+</head>
+<body>
+    <div class="page-center">
+        <div class="container">
+            <h1>Consumer Rights Management</h1>
+            <p>Welcome to the new request page. Please select the type of request you would like to raise.</p>
+            <p>You can raise a request to Update Consent Settings, Request Data Deletion, and Opt-Out Request</p>
+            <!-- Dropdown button -->
+            <div class="dropdown">
+                <button class="dropbtn">Raise a new request</button>
+                <div class="dropdown-content">
+                    <a href="/page">Update consent request</a>
+                    <a href="/deleterequest">Right to be forgotten request</a>
+                    <a href="/page">Opt-Out Request</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
